@@ -1,5 +1,5 @@
 {
-  "name": "Bugsnag",
+  "name": "cordova-bugsnag-plugin",
   "version": "1.0.0",
   "description": "Bugsnag Cordova Plugin for iOS and Android",
   "cordova": {
