@@ -11,7 +11,8 @@ cordova plugin add https://github.com/###
 
 **window.cordovaBugsnag:**
 
-- startBugsnagWithApiKey(apiKey)
+- startBugsnagWithApiKey(apiKey, onSucces, onFail)
+- notify(errorName, onSucces, onFail)
 
 #### iOS
 
@@ -37,18 +38,6 @@ cordova plugin add https://github.com/###
       end
     end
     ```
-
-#### Android
-
-- Paste the code below into Cordova Project config.xml
-
-```xml
-<gap:config-file platform="android" parent="application" mode="merge">
-      <meta-data
-        android:name="com.bugsnag.android.API_KEY"
-        android:value="PASTE_YOUR_API_KEY_HERE"/>
-</gap:config-file
-```
-
+    
 ##### Keywords
 bugsnag, plugin cordova, phonegap, android, ios
