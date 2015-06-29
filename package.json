@@ -1,0 +1,38 @@
+{
+  "name": "Bugsnag",
+  "version": "1.0.0",
+  "description": "Bugsnag Cordova Plugin for iOS and Android",
+  "cordova": {
+    "id": "br.com.memed.bugsnag",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielrcouto/bugsnag-cordova.git"
+  },
+  "keywords": [
+    "bugsnag",
+    "plugin cordova",
+    "phonegap",
+    "android",
+    "ios",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "author": "Gabriel Rodrigues Couto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabrielrcouto/bugsnag-cordova/issues"
+  },
+  "homepage": "https://github.com/gabrielrcouto/bugsnag-cordova#readme"
+}
