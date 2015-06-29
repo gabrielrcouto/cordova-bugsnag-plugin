@@ -74,9 +74,16 @@ public class BugsnagPlugin extends CordovaPlugin {
     //************************************************
 
     private boolean handleStartBugsnagWithApiKey(JSONArray args, final CallbackContext cbCtx) {
+        String apiKey = args.optString(0, "");
+
+        if (TextUtils.isEmpty(apiKey)) {
+            this.error(cbCtx, "missing API Key");
+            return false;
+        }
+
         Context ctx = cordova.getActivity();
         
-        Bugsnag.init(ctx);
+        Bugsnag.init(ctx, apiKey);
 
         cbCtx.success();
         return true;
