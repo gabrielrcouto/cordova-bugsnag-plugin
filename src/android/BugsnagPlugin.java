@@ -20,7 +20,7 @@ public class BugsnagPlugin extends CordovaPlugin {
 
     private enum Action {
 
-        START_BUGSNAG_WITH_API_KEY("startBugsnagWithApiKey"),
+        START_BUGSNAG_WITH_API_KEY("start_bugsnag_with_api_key"),
         NOTIFY("notify");
 
         private final String name;
