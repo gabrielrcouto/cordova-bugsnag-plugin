@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="br.com.memed.bugsnag"
+        version="1.0.0">
+
+    <name>Bugsnag</name>
+
+    <description>
+        Bugsnag Cordova Plugin for iOS and Android
+    </description>
+
+    <repo>https://github.com/gabrielrcouto/bugsnag-cordova.git</repo>
+    <author>Gabriel Rodrigues Couto (for Memed, with Love)</author>
+    <keywords>bugsnag, plugin cordova, phonegap, android, ios</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.5.0"/>
+    </engines>
+
+    <js-module src="www/bugsnag.js" name="Bugsnag">
+        <clobbers target="cordovaBugsnag"/>
+    </js-module>
+
+
+    <platform name="android">
+
+        <!-- config.xml -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Bugsnag">
+                <param name="android-package" value="br.com.memed.bugsnag.BugsnagPlugin"/>
+            </feature>
+        </config-file>
+
+        <!-- Plugin files -->
+        <source-file src="src/android/BugsnagPlugin.java" target-dir="src/android"/>
+        <source-file src="src/libs/bugsnag-android-3.2.6.jar" target-dir="libs/"/>
+
+        <!-- AndroidManifest.xml -->
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <!-- Required: Used to deliver Bugsnag crash reports -->
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- Optional: To provide network connectivity information to Bugsnag -->
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <!-- Optional: To see which Activity was active at the time of a crash -->
+            <uses-permission android:name="android.permission.GET_TASKS"/>
+        </config-file>
+    </platform>
+
+
+    <platform name="ios">
+
+        <!-- config.xml -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="Bugsnag">
+                <param name="ios-package" value="BugsnagPlugin"/>
+            </feature>
+        </config-file>
+
+        <!-- Plugin files-->
+        <header-file src="src/ios/BugsnagPlugin.h"/>
+        <source-file src="src/ios/BugsnagPlugin.m"/>
+
+        <framework src="Accelerate.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="CoreTelephony.framework"/>
+        <framework src="CFNetwork.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="Security.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="QuartzCore.framework"/>
+        <framework src="UIKit.framework"/>
+        <framework src="src/ios/Bugsnag/Bugsnag.framework" custom="true" />
+
+    </platform>
+</plugin>
