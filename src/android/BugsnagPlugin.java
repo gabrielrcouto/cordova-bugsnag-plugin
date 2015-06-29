@@ -76,7 +76,7 @@ public class BugsnagPlugin extends CordovaPlugin {
     private boolean handleStartBugsnagWithApiKey(JSONArray args, final CallbackContext cbCtx) {
         Context ctx = cordova.getActivity();
         
-        Bugsnag.init(this);
+        Bugsnag.init(cbCtx);
 
         cbCtx.success();
         return true;
